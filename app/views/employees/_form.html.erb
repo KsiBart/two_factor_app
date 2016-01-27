@@ -1,0 +1,109 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for([@user, @employee]) do |f| %>
+      <% if @employee.errors.any? %>
+        <div id="error_explanation">
+          <div class="alert alert-danger">
+            <h2><%= pluralize(@employee.errors.count, "error") %> prohibited this employee from being saved:</h2>
+          </div>
+
+          <ul>
+          <% @employee.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="field">
+        <%= f.label "First name" %><br>
+        <%= f.text_field :firstname, class: 'form-control' %>
+      </div>
+      <div class="field">
+        <%= f.label "Middle name" %><br>
+        <%= f.text_field :midname, class: 'form-control' %>
+      </div>
+      <div class="field">
+        <%= f.label "Last name" %><br>
+        <%= f.text_field :lastname, class: 'form-control' %>
+      </div>
+      <div class="field">
+        <%= f.label "National Insurency Number" %><br>
+        <%= f.text_field :pesel, class: 'form-control' %>
+      </div>
+      <div class="field">
+        <%= f.label :address %><br>
+        <%= f.text_field :address, class: 'form-control' %>
+      </div>
+      <div class="field">
+        <%= f.label :city %><br>
+        <%= f.text_field :city, class: 'form-control' %>
+      </div>
+      <div class="field">
+        <%= f.label :state %><br>
+        <%= f.text_field :state, class: 'form-control' %>
+      </div>
+      <div class="field">
+        <%= f.label "Postal code" %><br>
+        <%= f.text_field :postal, class: 'form-control' %>
+      </div>
+      <div class="field">
+        <%= f.label :country %><br>
+        <%= f.text_field :country, class: 'form-control' %>
+      </div>
+      <div class="field">
+        <%= f.label "Phone number" %><br>
+        <%= f.text_field :phone, class: 'form-control' %>
+      </div>
+      <div class="field">
+        <%= f.label :gender %><br>
+        <%= f.select :gender, "<option>M</option><option>F</option>".html_safe, {}, { :class => "form-control" } %>
+      </div>
+      <div class="field">
+        <%= f.label :department %><br>
+        <%= f.text_field :department, class: 'form-control' %>
+      </div>
+      <div class="field">
+        <%= f.label "Date of birth" %><br>
+        <%= f.text_field :birthdate, class: 'datepicker form-control' %>
+      </div>
+      <div class="field">
+        <%= f.label "Date of hire" %><br>
+        <%= f.text_field :hiredate, class: 'datepicker form-control' %>
+      </div>
+      <div class="field">
+        <%= f.label :email %><br>
+        <%= f.text_field :email, class: 'form-control' %>
+      </div>
+      <div class="field">
+        <%= f.label "Hours per week" %><br>
+        <%= f.number_field :hrsperweek, class: 'form-control' %>
+      </div>
+      <div class="field">
+        <%= f.label "Hourly wage" %><br>
+        <%= f.text_field :wage, class: 'form-control' %>
+      </div>
+      <div class="field">
+        <%= f.label :nationality %><br>
+        <%= f.text_field :nationality, class: 'form-control' %>
+      </div>
+      <div class="field">
+        <%= f.label "Marital status" %><br>
+        <%= f.select :marital, "<option>Single</option><option>Married</option><option>Divorced<?option><option>Widowed</option><option>Separated</option>".html_safe, {}, { :class => "form-control" } %>
+      </div>
+        <%= f.submit "Save changes", class: "btn btn-primary"  %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $('.datepicker').datepicker({
+    format: "yyyy-mm-dd",
+    autoclose: true
+})
+  $('[data-behaviour~=datepicker]').datepicker({
+    format: "yyyy-mm-dd",
+    autoclose: true
+});
+</script>

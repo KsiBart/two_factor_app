@@ -1,0 +1,48 @@
+<div class="row">
+  <div class="col-md-9 col-md-offset-1">
+    <p id="notice"><%= notice %></p>
+
+    <h1>Employees</h1>
+
+    <table class="table table-striped pretty">
+      <thead>
+        <tr>
+          <th><%= sortable "firstname", "First name" %></th>
+          <th><%= sortable "lastname", "Last name" %></th>
+          <th><%= sortable "pesel", "National Insurency Number" %></th>
+          <th><%= sortable "email", "Email" %></th>
+          <th><%= sortable "department", "Department" %></th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @employees.each do |employee| %>
+          <tr>
+            <td><%= employee.firstname %></td>
+            <td><%= employee.lastname %></td>
+            <td><%= employee.pesel %></td>
+            <td><%= employee.email %></td>
+            <td><%= employee.department %></td>
+            <td><%= link_to user_employee_path(current_user, employee), class: "btn btn-default" do %>
+                <i class="fa fa-info-circle fa-fw"></i>Show
+              <% end %>
+            </td>
+            <td><%= link_to edit_user_employee_path(current_user, employee), class: "btn btn-default" do %>
+                <i class="fa fa-pencil-square fa-fw"></i>Edit 
+              <% end %></td>
+            <td><%= link_to [current_user, employee], method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" do %>
+                <i class="fa fa-trash fa-fw"></i>Destroy
+              <% end %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <br>
+
+    <%= link_to new_user_employee_path(current_user), class: 'btn btn-primary' do %>
+      <i class="fa fa-plus fa-fw"></i>New Employee
+    <% end %>
+  </div>
+</div>

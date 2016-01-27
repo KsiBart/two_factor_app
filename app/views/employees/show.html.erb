@@ -1,0 +1,106 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <p id="notice"><%= notice %></li>
+  
+    <ul class="list-group">
+      
+      <li class="list-group-item">
+        <strong>First name:</strong>
+        <%= @employee.firstname %>
+      </li>
+
+      <li class="list-group-item">
+        <strong>Middle name:</strong>
+        <%= @employee.midname %>
+      </li>
+
+      <li class="list-group-item">
+        <strong>Last name:</strong>
+        <%= @employee.lastname %>
+      </li>
+
+      <li class="list-group-item">
+        <strong>National Insurency Number:</strong>
+        <%= @employee.pesel %>
+      </li>
+
+      <li class="list-group-item">
+        <strong>Address:</strong>
+        <%= @employee.address %>
+      </li>
+
+      <li class="list-group-item">
+        <strong>City:</strong>
+        <%= @employee.city %>
+      </li>
+
+      <li class="list-group-item">
+        <strong>State:</strong>
+        <%= @employee.state %>
+      </li>
+
+      <li class="list-group-item">
+        <strong>Postal code:</strong>
+        <%= @employee.postal %>
+      </li>
+
+      <li class="list-group-item">
+        <strong>Country:</strong>
+        <%= @employee.country %>
+      </li>
+
+      <li class="list-group-item">
+        <strong>Phone number:</strong>
+        <%= @employee.phone %>
+      </li>
+
+      <li class="list-group-item">
+        <strong>Gender:</strong>
+        <%= @employee.gender %>
+      </li>
+
+      <li class="list-group-item">
+        <strong>Department:</strong>
+        <%= @employee.department %>
+      </li>
+
+      <li class="list-group-item">
+        <strong>Date of birth:</strong>
+        <%= @employee.birthdate %>
+      </li>
+
+      <li class="list-group-item">
+        <strong>Date of hire:</strong>
+        <%= @employee.hiredate %>
+      </li>
+
+      <li class="list-group-item">
+        <strong>E-mail:</strong>
+        <%= @employee.email %>
+      </li>
+
+      <li class="list-group-item">
+        <strong>Hours per week:</strong>
+        <%= @employee.hrsperweek %>
+      </li>
+
+      <li class="list-group-item">
+        <strong>Hourly wage:</strong>
+        <%= @employee.wage %>
+      </li>
+
+      <li class="list-group-item">
+        <strong>Nationality:</strong>
+        <%= @employee.nationality %>
+      </li>
+
+      <li class="list-group-item">
+        <strong>Marital status:</strong>
+        <%= @employee.marital %>
+      </li>
+    </ul>
+
+    <%= link_to 'Edit', edit_user_employee_path(current_user, @employee), class: "btn btn-info" %> |
+    <%= link_to 'Back', user_employees_path(current_user), class: "btn btn-info" %>
+  </div>
+</div>

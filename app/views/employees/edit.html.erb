@@ -1,0 +1,6 @@
+<h1>Editing Employee</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Show', user_employee_path(current_user, @employee), class: "btn btn-info" %> |
+<%= link_to 'Back', user_employees_path(current_user), class: "btn btn-info"  %>

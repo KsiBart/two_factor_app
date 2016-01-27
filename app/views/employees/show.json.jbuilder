@@ -1,0 +1,1 @@
+json.extract! @employee, :id, :firstname, :midname, :lastname, :pesel, :address, :city, :state, :postal, :country, :phone, :gender, :department, :birthdate, :hiredate, :email, :hrsperweek, :wage, :nationality, :marital, :created_at, :updated_at
